@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#problem">Problem Definition</a>
+            </li>
+            <li>
+                <a href="#iter">Iterations & Solution</a>
+            </li>
+            <li>
+                <a href="#growth">Growth</a>
+            </li>
+            <li>
+                <a href="#conclusion">Conclusion</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+    
+
+    <div id="lead" style="background-image:url('../images/cover1.png')">
+        <div id="lead-content">
+            <h2>Digital Assistant for Autonomous Insurance Claims</h2>
+            <a class="btn-rounded-white" href="../index.html">BACK TO HOME</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+        <!-- End #lead -->
+
+    <div id="problem">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">Problem Definition</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                            During my last year of Engineering Science at the University of Toronto, I was fortunate to participate in a multidisciplinary capstone design course. With four other outstanding colleagues, we undertook a project offered by <i><a href="http://www.liscena.com">Liscena</a></i>, a start-up working towards automating auto insurance claim processes. Throughout the year, I was able to grow considerably as both a design engineer and as a person. 
+                    </p><br>
+                    <p>
+                            The image below summarizes the main challenges we were tackling. Adjusters, the employees of insurance carriers who are responsible for adjudicating and paying out claims, are often overwhelmed by their daily workload. They handle on average 150 claims a day, with 30% of their time spent on low-complexity tasks. The goal of our project is to create a product that could improve the claims process and reduce the calling times required between adjusters and policyholders. 
+                    </p><br>
+                    <div class="poster-image">
+                            <img src="../images/poster.jpg"/>
+                            <center><figcaption style="color:#74808a">Fig.1 - Problem definition, objectives and solution of our design.</figcaption></center><br>
+                    </div><br>
+                    <p><br>
+                            We designed a configurable first notice of loss (FNOL) form for claim filing, as well as a chat interface between claimants and adjusters to handle information requests, status checks and FAQs, which we estimate would help insurance carriers save $18 USD per claim.     
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>  
+        
+        <div id="iter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">Iterations & Solution</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                                I believe the most important aspect of the design process is iterations. 
+                        </p><br>
+                        <p>
+                                The team initially developed a set of objectives, metrics and constraints based on design for X’s (DfXs). However, after consulting with our supervisor, we realized that our problem was poorly framed, leading to a set of very loosely connected requirements. Since two of our team members are also our clients, we often times could not draw a discernible line between the company needs and the project requirements. 
+                        </p><br>
+                        <p>
+                                We eventually digressed from the traditional requirements model and invested into business process models, which consists of diagrams that outline the workflow of a business. By designing a business process diagram for the claims process, we were able to easily identify the main pain points in an adjuster’s daily routine and scoping the challenges appropriately to adapt to the timeline of the capstone project. We were then able to come up with specific requirements tailored to each subproblem. 
+                        </p><br>
+                        <div class="poster-image">
+                                <img src="../images/bpd-as-is.png"/>
+                                <center><figcaption style="color:#74808a">Fig.2 - Business process diagram outlining current claims process.</figcaption></center><br>
+                        </div><br>
+                        <p><br>
+                                Our solution has also drifted from its initial state. At first, the client focused on designing a messenger chatbot for the FNOL claim filing process. I implemented the flow using DialogFlow API and Node.js framework. However, I concluded that the bot was not a viable solution for this task. It was not robust against user inputs and was prone to error, especially due to the lengthy and complex tree of questions. It also did not allow the user to change responses easily. 
+
+                        </p><br>
+                        <p>
+                                After the setback, the team brainstormed once again and settled on a dynamic form, which is a more conversational and interactive way of presenting a form. After speaking to several insurance carriers, we realized that each company has their own question flow. To adapt to the versatility of the form, we decided to implement a customizable and flexible FNOL form. Depending on the user input, the policyholder will be asked different questions and prompted to traverse down various branches of the tree. I implemented the backend using an RESTful API architecture to return the next question to ask the user and save their previous answer into a database table. 
+                        </p><br>
+                        <p>
+                                On the chat interface end, I implemented majority of the chatbot flow for checking status updates and extending rental period and kept the framework as modular as possible. The video below shows a short demo of the two functions. My design facilitates the addition of features and allows the product to be scalable. I also came up with a keyword implementation to detect whether the user would like to be assisted by a human. 
+                        </p><br>
+                        <center><video width="500", height="300", controls>
+                                <source src="../images/chatbot.mov" type="video/mp4">
+                        </video></center><br>
+                        <p><br>
+                            Aside from the basic flow, I also challenged myself and designed value-added features to improve our solution:
+
+                            <ol style="color:#74808a">
+                                <li>
+                                    Restart the conversation if the policyholder answers the validation questions incorrectly 3 times to avoid infinite loops
+                                </li>
+                                <li>
+                                    Switch to a different chatbot function while having already in the process of a path (e.g. status check)
+                                </li>
+                                <li>
+                                    Integrate status updates with databases to be consistent with real-world data
+                                </li>
+                                <li>
+                                    Set the only allowable rental extension durations one week and two weeks while all other time slots are invalid. 
+                                </li>
+
+                            </ol>
+                                
+                        </p>
+
+                        <center><video width="500", height="300", controls>
+                                <source src="../images/chatbot2.mov" type="video/mp4">
+                        </video></center><br>
+                    </div>
+                </div>
+            </div>
+        </div> 
+            
+        <div id="growth">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">Growth</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                                This project allowed me to develop a set of important teamwork skills. We had regular meetings, set clear goals, and prompted inputs and opinions from members. I have improved my communication skills and acquired knowledge in multiple areas of software engineering. 
+                        </p><br>
+                        <p>
+                                I recognize that one of my greatest highlights is my work ethics. In this project, I would always deliver my work on time and sometimes even offer to help other team members with their share. However, being somewhat introverted, it is also evident that one of my weaker areas is in communication. 
+                        </p><br>
+                        <p>
+                                In lower year courses, I was accustomed to individually brainstorm and discuss results at the next meeting. However, in this course, this was embedded in our meetings and we had to be quick on our feet to contribute to the information exchange. Initially, I provided minimal feedback and was not active in helping with team decisions by asking redundant questions. I was not familiar with the technical concepts that were brought up or the specific implementation of a software solution. I realized that the ability to effectively communicate one’s thoughts is a valuable skill to have, not only in my professional career but also in life in general.
+                        </p><br>
+                        <p>      
+                                I worked towards developing my interpersonal skills by noting down all the concepts with which I was not familiar and researching on the technical side of a web service implementation. By the end of the year, I gained tremendous knowledge in software architecture and client-server models. Furthermore, I contributed more to team discussions and raised contentious issues in a constructive way. My improvement was also appreciated by the team based on the feedback they had given me. 
+                                
+                        </p><br>
+
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+        <div id="conclusion">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="heading">Conclusion</h2>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                    The project overall was quite successful. The client was very satisfied with our problem definition, design assessment and contribution to their product. I was able to grow considerably as a person in terms of my engineering design knowledge, design approaches and software skills. It had been my honour to work with these talented individuals and I hope the best of luck in their future endeavours. 
+                            </p><br>
+    
+                            <div class="poster-image">
+                                    <img src="../images/group-pic.jpg"/>
+                                    <center><figcaption style="color:#74808a">Fig.3 - The team, featuring Paul Suk, Kyle Bimm, Arkady Arkhangorodsky, Hao Sheng and I (left to right).</figcaption></center><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            
+
+        <div id="contact">
+            <div class="contact-info">
+                <h3 class="title">CONTACT</h3>
+                <p><br>Feel free to contact me if you have any questions.</i><br>
+                    <br><a href="mailto:angela.ye@mail.utoronto.ca" style="color:rgb(199, 191, 253)">angela.ye@mail.utoronto.ca</a><br><br>
+                </p>
+            </div>
+        </div> 
+    
+       
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 copyright">
+                        <p>
+                            Copyright &copy; 2019 ANGELA YE
+                        </p>
+                    </div>
+                    <div class="col-sm-2 top">
+                            <span id="to-top">
+                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/scripts.min.js"></script>
+</body>
+
+</html>

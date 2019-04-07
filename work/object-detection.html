@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#problem">Problem Definition</a>
+            </li>
+            <li>
+                <a href="#iter">Design Solution</a>
+            </li>
+            <li>
+                <a href="#growth">Growth</a>
+            </li>
+            <li>
+                <a href="#conclusion">Conclusion</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+    
+
+    <div id="lead" style="background-image:url('../images/cover2.png')">
+        <div id="lead-content">
+            <h2>Few-Example Object Detection with One-Shot Learning</h2>
+            <a class="btn-rounded-white" href="../index.html">BACK TO HOME</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+        <!-- End #lead -->
+
+    <div id="problem">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">Problem Definition</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        As part of my undergraduate thesis, I implemented a convolutional neural network for few-example object detection under the supervision of <a href='https://www.mie.utoronto.ca/mie/faculty/nejat'>Professor Nejat</a>. 
+                    </p><br>
+                    <p>
+                        With the rapid growth rate of senior population surpassing all younger age groups, our society needs to adapt to this demographic shift. One possible application is to design assistive robots to guide seniors around supermarkets and help them locate products. A typical supermarket contains on average 50,000 different products and the frequent relocation of items often decrease satisfaction of older customers. Existing designs focus primarily on navigation using radio frequency identification to escort the visually impaired to the general location of the product, with limited research available on intelligent product identification systems in retail environments.
+                    </p>
+                    <p><br>
+                        A wide range of categories and items in supermarkets could greatly increase training complexity and storage. Furthermore, it would be difficult to obtain a large number of samples for each class to train an accurate network. Hence, I designed a network that would require only one training example to make a logical guess of how similar an item is relative to an object of interest.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>  
+        
+        <div id="iter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">Design Solution</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            With supermarkets constantly changing and importing new products, it is necessary to train a network that is able to detect objects based on very few examples and identify unseen classes. My solution involves using the <a href='https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf'>Siamese Network</a>, which performs a convolutional neural network on two images and output a similarity score based on their feature vectors. 
+                        </p><br>
+                        <p>
+                            The Siamese Network performs one-shot learning classification tasks, which makes a prediction on an test instance after observing only <i>one</i> example from each class. I was able to incorporate this method into a current state-of-the-art object detection network, <a href='https://arxiv.org/abs/1708.02002'>RetinaNet</a>. RetinaNet is faster than other region-based algorithms while achieving very high accuracies.   
+                        </p><br>
+                        <p>
+                            I annotated my own training and testing images using the <a href='https://github.com/brendenlake/omniglot'>Omniglot</a> dataset, which consists of over 1600 characters and 20 examples of each. Compared to the baseline accuracy of 71.88% obtained from passing the inputs into the two networks separately, my network achieved a 89.43% performance. 
+                            </p><br>
+                        <div class="portfolio-image">
+                                <center><img src="../images/omniglot.png" class="portfolio-image"/></center>
+                                <center><figcaption style="color:#74808a">Fig.1 - The network correctly identifies the most similar character to the input image (top right).</figcaption></center><br>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div> 
+            
+        <div id="growth">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">Growth</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            Prior to my thesis work, I have covered a basic neural network course and trained a simple fully connected network to classify faces. The immediate progression from a few-layered architecture to a multi-layered and multi-network implementation was difficult to absorb and comprehend. Furthermore, it was especially challenging to translate the research paper implementations into code. There were specific details that were left in the papers and I had to fill the gap on my own. 
+                        </p><br>
+                        <p>
+                            However, after reading through many papers and going through online repositories, I realized the similarities across all the object detection networks and how they organize the code structure. I learned how to build networks using PyTorch (python library) and leverage python classes and parser arguments to build configurable models. Furthermore, I now have a stronger understanding of tensors and their operations, network gradients and losses, as well as classification and regression tasks in object detection algorithms.
+                        </p><br>
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+        <div id="conclusion">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="heading">Conclusion</h2>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                My network offers an end-to-end training to learn all parameters and feature vectors and is applicable to unseen test examples. It was an enriching experience to explore real-world convolutional networks and apply them to my own research. 
+                            </p><br>
+                            <p>
+                                As a next step to build upon my work, I would recommend testing the network on a more complex dataset and tune the hyperparameters to improve the accuracy. 
+                            </p><br>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            
+
+        <div id="contact">
+            <div class="contact-info">
+                <h3 class="title">CONTACT</h3>
+                <p><br>Feel free to contact me if you have any questions.</i><br>
+                    <br><a href="mailto:angela.ye@mail.utoronto.ca" style="color:rgb(199, 191, 253)">angela.ye@mail.utoronto.ca</a><br><br>
+                </p>
+            </div>
+        </div> 
+    
+       
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 copyright">
+                        <p>
+                            Copyright &copy; 2019 ANGELA YE
+                        </p>
+                    </div>
+                    <div class="col-sm-2 top">
+                            <span id="to-top">
+                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/scripts.min.js"></script>
+</body>
+
+</html>
