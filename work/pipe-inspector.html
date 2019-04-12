@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#problem">Problem Definition</a>
+            </li>
+            <li>
+                <a href="#iter">Design Solution</a>
+            </li>
+            <li>
+                <a href="#growth">Growth</a>
+            </li>
+            <li>
+                <a href="#conclusion">Conclusion</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+    
+
+    <div id="lead" style="background-image:url('../images/cover3.JPG')">
+        <div id="lead-content">
+            <h3>Pipe Inspector Machine - Roboko</h3>
+            <a class="btn-rounded-white" href="../index.html">BACK TO HOME</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+        <!-- End #lead -->
+
+    <div id="problem">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">Problem Definition</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Up to date, nuclear reactors are still a promising source of energy for many countries
+                        worldwide. With more than 400 nuclear power plants currently in operation, and each
+                        requiring approximately 44 miles of piping, it becomes tremendously painstaking and time
+                        inefficient for regular and manual examinations of the pipelines                    
+                    </p><br>
+                    <p>
+                        A nuclear power
+                        plant has requested specifically for an autonomous machine capable of scanning the outer
+                        surface of the pipes for any potential signs of radioactive material accumulation and
+                        recording the locations of the spots. A minimum of three spots need to be detected for a
+                        120 inch pipe.                    
+                    </p>
+                    <p><br>
+                        Roboko is an autonomous robot designed to accomplish the aforementioned task.                    </p>
+                </div>
+            </div>
+        </div>
+    </div>  
+        
+        <div id="iter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">Design Solution</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            The project is divided into three subsystems: electrochemical, circuit and microcontroller. I was in charge of the circuit component. I designed all electronic interfaces to connect the sensors and actuators to the
+                            microcontroller board, specified power requirements, performed voltage and current calculations and soldered all circuits.
+                        </p><br>
+                        <p>
+                                Roboko is constructed from three layers of hardwood held together by four
+                                angled titanium beams at its corners. Its arm is in form of a “crab
+                                clamp” mechanism, which can open up upon detecting a pipe support by an IR sensor.
+                                To report the position and number of black spots, 16 IR sensors are evenly spaced apart
+and mounted on the ring to detect black spots that randomly distribute along the pipe. Upon
+detection, a buzzer will sound, and the black spot’s position (including distance and radial
+component) based on the IR will be recorded.
+                        </p><br>
+                        <div class="portfolio-image">
+                                <center><img src="../images/roboko.JPG" class="portfolio-image"/></center>
+                                <center><figcaption style="color:#74808a">Fig.1 - Final Design of Roboko.</figcaption></center><br>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div> 
+            
+        <div id="growth">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">Growth</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            Having limited knowledge on circuit analysis and structure, I picked up several important skills from this project. I was able to analyze voltage and current signals and take into account real-world factors to select components that meet the power rating requirements, build from circuit schematics and solder the components, and explore alternative design solutions when a challenge is faced. 
+                        </p><br>
+                        <p>
+                            One of my tasks was to design a buzzer for indicating when a black spot has been detected. When I connected it to a signal pin from the microcontroller and ground, I noticed the sound is very faint. 
+                            I investigated the cause and realized that the current provided by the microcontroller board was too low. I researched on current amplifiers and connected the buzzer to a NPN transistor, which allows current to be amplified when a low current is recieved, and stays as open circuit when there is no signal.
+                        </p><br>
+                        <p>
+                            I was also exposed to complex integrated circuits and electronic devices. For example, to solve the issue of the lack of pins on the microcontroller to receive 16 IR sensor signals, I proposed using a 16-to-1 bit multiplexer.
+                            A multiplexer allows one to know precisely which one of the sixteen terminals is receiving a signal of 1 based on the 4 bit binary number at the output. This can be used to assist the team in locating the radial position of the spot on the pipe.
+                        </p><br>
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+        <div id="conclusion">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="heading">Conclusion</h2>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                The project had been a satisfying experience. I was exposed to the electrical side of a design and how it is integrated with software to control a robot. I recognized the value of teamwork and people with various talents and backgrounds to design a robot. Cheers to my team. The accomplishment would not have been made possible without them.
+                            </p><br>
+    
+                            <div class="poster-image">
+                                    <img src="../images/aer201-group.jpg"/>
+                                    <center><figcaption style="color:#74808a">Fig.2 - The team, featuring Gorden Tseng, Bill Shi and I (left to right).</figcaption></center><br>
+                            </div>
+                        </div>
+                </div>
+            </div>   
+            
+
+        <div id="contact">
+            <div class="contact-info">
+                <h3 class="title">CONTACT</h3>
+                <p><br>Feel free to contact me if you have any questions.</i><br>
+                    <br><a href="mailto:angela.ye@mail.utoronto.ca" style="color:rgb(199, 191, 253)">angela.ye@mail.utoronto.ca</a><br><br>
+                </p>
+            </div>
+        </div> 
+    
+       
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 copyright">
+                        <p>
+                            Copyright &copy; 2019 ANGELA YE
+                        </p>
+                    </div>
+                    <div class="col-sm-2 top">
+                            <span id="to-top">
+                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                            </span>
+                    </div>
+                    <div class="col-sm-5 social">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/angelaaye" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/angela-y-259104164" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/scripts.min.js"></script>
+</body>
+
+</html>
